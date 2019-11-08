@@ -5,7 +5,7 @@ $(document).ready(function () {
 
   $(".tweet").hover(
     function () {
-      const userId = $(this).children('.tweet-header').children('#user-id');
+      const userId = $(this).children('.tweet-header').children('.user-id');
       //add hover to tweets
       $(this).addClass("hover");
 
@@ -13,7 +13,7 @@ $(document).ready(function () {
       userId.show();
 
     }, function () {
-      const userId = $(this).children('.tweet-header').children('#user-id');
+      const userId = $(this).children('.tweet-header').children('.user-id');
       //remove hover from tweets
       $(this).removeClass("hover");
 

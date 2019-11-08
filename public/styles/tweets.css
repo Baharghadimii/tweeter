@@ -13,18 +13,18 @@
   height: 100px;
 }
 
-#user-pic {
+.user-pic {
   margin-left: 10px;
   margin-top: 10px;
   float: left;
 }
 
-#user-name {
+.user-name {
   float: left;
   margin-left: 10px;
 }
 
-#user-id {
+.user-id {
   float: right;
   margin-right: 10px;
   display: none;
@@ -37,14 +37,14 @@
   font-family: Saurce Sans Pro, sans-serif;
 }
 
-#tweet-footer {
+.tweet-footer {
   font-size: 18px;
   width: 90%;
   height: auto;
   margin: 0 auto;
   border-bottom: 2px solid black;
 }
-#tweet-footer p{
+.tweet-footer p{
   float: left;
   margin-left: 20px;
   margin-top: 20px;
@@ -53,7 +53,7 @@
   box-shadow: 5px 10px #B0BEEA;
   opacity: 1;
 }
-#icon{
+.icon{
   width: 20px;
   height: 20px;
   margin-top: 20px;
