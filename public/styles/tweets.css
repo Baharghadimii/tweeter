@@ -27,7 +27,7 @@
 .user-id {
   float: right;
   margin-right: 10px;
-  display: none;
+  opacity: 0;
 }
 
 .tweet-content {
@@ -49,8 +49,11 @@
   margin-left: 20px;
   margin-top: 20px;
 }
-.hover{
+.tweet:hover {
   box-shadow: 5px 10px #B0BEEA;
+  opacity: 1;
+}
+.tweet:hover .user-id{
   opacity: 1;
 }
 .icon{
