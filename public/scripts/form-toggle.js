@@ -3,5 +3,6 @@
 $(document).ready(function () {
   $('.button').click(function () {
     $('.new-tweet').toggle();
+    $('textarea').focus();
   });
 });

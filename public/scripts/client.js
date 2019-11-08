@@ -67,6 +67,16 @@ $(document).ready(function () {
   //render tweets before submission
   loadTweets();
 
+  //Get user input value for validation
+  const input = $('#input-field').val();
+
+  //get error elements
+  const $errorContent = $('#error-content');
+  const $error = $('.error');
+
+  //hide error on default
+  $error.slideUp();
+
   //add onclick event handler
   $('#submit-tweet').submit(function (event) {
 
@@ -76,16 +86,24 @@ $(document).ready(function () {
     //text in input filed
     const input = $('#input-field').val();
 
+    //set error message not shown in default
+    const $errorContent = $('#error-content');
+    const $error = $('.error');
+    $error.slideUp();
+
     //check if text length doesn't exceed more than 140 characters
     if (input.length >= 140) {
-      //show alert
-      alert(`Too Long! It shouldn't exceed more than 140 characters!!!`);
+
+      //show error message
+      $error.slideDown();
+      $errorContent.text(`Too Long! It shouldn't exceed more than 140 characters!!!`);
 
       //check if user has typed anything
     } else if (input.length === 0) {
 
-      //show alert
-      alert(`You didn't type anything yet!!!`);
+      //show error message
+      $error.slideDown();
+      $errorContent.text(`You didn't type anything yet!!!`);
 
     } else {
       //fetching tweets using ajax post
@@ -99,7 +117,13 @@ $(document).ready(function () {
           loadTweets();
         })
       });
+      $('#submit-tweet').trigger("reset");
+      $('.counter').text("140");
+      $('textarea').focus();
+
     }
+    //clear text field
+
   });
 }
 

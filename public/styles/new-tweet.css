@@ -12,18 +12,19 @@ textarea {
   font-size: 20px;
   font-family: Saurce Sans Pro, sans-serif;
   border-bottom: 3px solid #797676;
+  outline: none;
 }
 
 .textarea-button {
   width: 100px;
   background-color: #4056a1;
   color: white;
-  font-family: Bungee, sans-serif;
+  font-family: Bungee, cursive;
   font-size: 20px;
 }
 
 .counter {
-  font-family: Bungee, sans-serif;
+  font-family: Bungee, cursive;
   float: right;
 }
 .counter_error {

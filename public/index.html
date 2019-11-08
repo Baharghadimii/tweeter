@@ -18,6 +18,7 @@
   <link rel="stylesheet" href="/styles/header.css" type="text/css" />
   <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
   <link rel="stylesheet" href="/styles/tweets.css" type="text/css" />
+  <link rel="stylesheet" href="/styles/error.css" type="text/css" />
 
   <!-- External JS -->
   <script type="text/javascript" src="/vendor/jquery-2.2.3.min.js"></script>
@@ -51,11 +52,18 @@
   <!-- Page-specific (main) content here -->
   <main class="container">
     <!--Compose tweet section-->
+    <!--Error Section-->
+    <section class='error'>
+      <i class="fas fa-exclamation-triangle"></i>
+      <span id='error-content'></span>
+      <i class="fas fa-exclamation-triangle"></i>
+    </section>
+    <!--New Tweet-->
     <section class="new-tweet">
       <h2>Compose Tweet</h2>
       <form id='submit-tweet' method="GET" action="/">
         <div>
-          <textarea id="input-field" name="text" placeholder="What are you humming about?"></textarea>
+          <textarea id="input-field" name="text" placeholder="What are you humming about?" autofocus></textarea>
         </div>
         <input class='textarea-button' type="submit" value="Tweet">
         <span class="counter">140</span>
