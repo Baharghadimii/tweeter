@@ -33,7 +33,7 @@ const renderTweets = function (array) {
 
     // calls createTweetElement for each tweet
     // takes return value and appends it to the tweets container
-    $('.tweets-container').append(createTweetElement(item));
+    $('.tweets-container').prepend(createTweetElement(item));
   }
 };
 
@@ -55,6 +55,25 @@ $(document).ready(function () {
   //render tweets before submission
   loadTweets();
 
-});
+  //add onclick event handler
+  $('#submit-tweet').submit(function (event) {
+
+    //fetching tweets using ajax post
+    $.ajax({
+      url: `/tweets`,
+      datatype: 'JSON',
+      method: 'POST',
+      data: $(this).serialize(),
+      success: (function (data) {
+        //render tweets after adding data to database
+        loadTweets();
+      })
+    });
+
+  });
+}
+
+);
+
 
 
