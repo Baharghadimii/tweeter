@@ -1,4 +1,48 @@
-#logo{
-  font-family: 'Bungee', cursive;
+.nav {
+  top: 0;
+  background-color: #4056A1;
+  position: fixed;
+  height: 120px;
+  width: 100%;
+  z-index: 3;
+  color: #FFFFFF;
+  padding: 1.5em;
+  display: flex;
+  justify-content: space-between;
+  
+}
+#logo {
+  font-family: Bungee, cursive;
   font-size: 1.3em;
+  margin: 10px;
+}
+#nav-div-button{
+  display: flex;
+  height: auto;
+  width: 200px;
+  flex-direction: column;
+  align-items: center;
+}
+#nav-span{
+  margin: 0 auto;
+
+}
+.button {
+  background-color: transparent;
+  border: none;
+  margin: 0 auto;
+  color: white;
+  margin-top: 10px;
+  cursor: pointer;
+}
+.button:focus{
+  outline: none;
+}
+i.vert-move {
+  -webkit-animation: mover 0.9s infinite  alternate;
+  animation: mover 0.4s infinite  alternate;
+}
+@keyframes mover {
+  0% { transform: translateY(0px); }
+  100% { transform: translateY(-10px); }
 }

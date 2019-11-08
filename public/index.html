@@ -18,6 +18,7 @@
 
   <!-- External JS -->
   <script type="text/javascript" src="/vendor/jquery-2.2.3.min.js"></script>
+  <script src="https://kit.fontawesome.com/3310f83d3a.js" crossorigin="anonymous"></script>
 
   <!-- App JS -->
   <script type="text/javascript" src="/scripts/client.js"></script>
@@ -25,8 +26,17 @@
 
 <body>
   <!-- Top nav bar (fixed) -->
-  <nav>
-    <span id="logo">tweeter</span>
+  <nav class='nav'>
+    <div id='logo'>
+      <span>tweeter</span>
+    </div>
+    <div id='nav-div-button'>
+      <span id='nav-span'><strong>Write</strong> a new tweet
+      </span>
+      <button class='button'>
+        <i class="fas fa-angle-double-down vert-move"></i>
+      </button>
+    </div>
   </nav>
 
   <!-- Page-specific (main) content here -->
