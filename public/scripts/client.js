@@ -1,8 +1,18 @@
 /* eslint-disable indent */
 /* eslint-disable no-undef */
 
+//escape from XSS(Cross-Site Scripting)
+const escape = function (str) {
+  let div = document.createElement('div');
+  div.appendChild(document.createTextNode(str));
+  return div.innerHTML;
+};
+
 //create tweet using user object
 const createTweetElement = function (object) {
+
+  //safe text to use for content
+  const safeHTML = `<p class="tweet-content">${escape(object.content.text)}</p>`;
 
   //substitute markup content with data in given object
   const markup = `
@@ -12,7 +22,7 @@ const createTweetElement = function (object) {
       <p class='user-name'>${object.user.name}</p>
       <p class='user-id'>${object.user.handle}</p>
   </header>
-  <p class="tweet-content">${object.content.text}</p>
+  ${safeHTML}
   <footer class='tweet-footer'>
       <p>${object.created_at}</p>
       <i class="fas fa-heart icon"></i>
