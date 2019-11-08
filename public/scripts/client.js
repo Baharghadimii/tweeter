@@ -46,6 +46,8 @@ const loadTweets = function () {
       if (!response) {
         alert("Error: not be able to fetch tweets");
       }
+      //empty data in container before fetching
+      $('.tweets-container').empty();
       renderTweets(response);
     });
 };
@@ -57,6 +59,9 @@ $(document).ready(function () {
 
   //add onclick event handler
   $('#submit-tweet').submit(function (event) {
+
+    //prevent page from refreshing for fetching data
+    event.preventDefault();
 
     //text in input filed
     const input = $('#input-field').val();
