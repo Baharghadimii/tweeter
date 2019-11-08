@@ -15,9 +15,9 @@ const createTweetElement = function (object) {
   <p class="tweet-content">${object.content.text}</p>
   <footer class='tweet-footer'>
       <p>${object.created_at}</p>
-      <img class='icon' src="/images/like.png" />
-      <img class='icon' src="/images/retweet.png" />
-      <img class='icon' src="/images/flag.png" />
+      <i class="fas fa-heart icon"></i>
+      <i class="fas fa-retweet icon"></i>
+      <i class="fas fa-flag icon"></i>
   </footer>
 </article>`;
 
