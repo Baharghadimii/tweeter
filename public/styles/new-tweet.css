@@ -1,0 +1,27 @@
+.new-tweet {
+  margin: 0 auto;
+}
+
+textarea {
+  background: transparent;
+  width: 100%;
+  border: none;
+  resize: none;
+  font-weight: bold;
+  font-size: 20px;
+  font-family: Saurce Sans Pro, sans-serif;
+  border-bottom: 3px solid #797676;
+}
+
+.textarea-button {
+  width: 100px;
+  background-color: #4056a1;
+  color: white;
+  font-family: Bungee, sans-serif;
+  font-size: 20px;
+}
+
+.counter {
+  font-family: Bungee, sans-serif;
+  float: right;
+}
