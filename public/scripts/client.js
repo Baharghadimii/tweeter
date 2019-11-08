@@ -58,18 +58,33 @@ $(document).ready(function () {
   //add onclick event handler
   $('#submit-tweet').submit(function (event) {
 
-    //fetching tweets using ajax post
-    $.ajax({
-      url: `/tweets`,
-      datatype: 'JSON',
-      method: 'POST',
-      data: $(this).serialize(),
-      success: (function (data) {
-        //render tweets after adding data to database
-        loadTweets();
-      })
-    });
+    //text in input filed
+    const input = $('#input-field').val();
 
+    //check if text length doesn't exceed more than 140 characters
+    if (input.length >= 140) {
+      //show alert
+      alert(`Too Long! It shouldn't exceed more than 140 characters!!!`);
+
+      //check if user has typed anything
+    } else if (input.length === 0) {
+
+      //show alert
+      alert(`You didn't type anything yet!!!`);
+
+    } else {
+      //fetching tweets using ajax post
+      $.ajax({
+        url: `/tweets`,
+        datatype: 'JSON',
+        method: 'POST',
+        data: $(this).serialize(),
+        success: (function (data) {
+          //render tweets after adding data to database
+          loadTweets();
+        })
+      });
+    }
   });
 }
 
