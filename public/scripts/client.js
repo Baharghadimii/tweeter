@@ -2,6 +2,8 @@
 /* eslint-disable no-undef */
 
 //escape from XSS(Cross-Site Scripting)
+// const moment = require('moment');
+
 const escape = function (str) {
   let div = document.createElement('div');
   div.appendChild(document.createTextNode(str));
@@ -14,6 +16,9 @@ const createTweetElement = function (object) {
   //safe text to use for content
   const safeHTML = `<p class="tweet-content">${escape(object.content.text)}</p>`;
 
+  // let time = moment(object.created_at).startOf('minutes').fromNow();
+
+  // console.log(time);
   //substitute markup content with data in given object
   const markup = `
   <article class='tweet'>
@@ -67,13 +72,6 @@ $(document).ready(function () {
   //render tweets before submission
   loadTweets();
 
-  //Get user input value for validation
-  const input = $('#input-field').val();
-
-  //get error elements
-  const $errorContent = $('#error-content');
-  const $error = $('.error');
-
   //hide error on default
   $error.slideUp();
 
@@ -122,9 +120,6 @@ $(document).ready(function () {
     $('#submit-tweet').trigger("reset");
     $('.counter').text("140");
     $('textarea').focus();
-
-
-
   });
 }
 
