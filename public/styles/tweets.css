@@ -1,11 +1,11 @@
 .tweet {
   border: 2px solid black;
-  margin-top: 50px;
+  margin-top: 20px;
   width: 100%;
   height: 250px;
   margin-bottom: 30px;
   opacity: 0.5;
-
+  
 }
 
 .tweet-header {
@@ -64,4 +64,10 @@
   float: right;
   color: blue;
 
+}
+@media only screen and (max-width: 1024px){ 
+  .tweets-container{
+    display: flex;
+    flex-direction: column-reverse;
+  }
 }

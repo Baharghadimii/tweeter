@@ -50,3 +50,11 @@ i.vert-move {
   0% { transform: translateY(0px); }
   100% { transform: translateY(-10px); }
 }
+/* Media Query for Tablets Ipads portrait mode */ 
+@media only screen and (max-width: 1024px){ 
+  .nav{
+    background-color: #cc932f; 
+    background-image: url("../images/asfalt-dark.png");
+    position: static;
+  }
+} 

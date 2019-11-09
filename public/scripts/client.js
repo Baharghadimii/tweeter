@@ -43,7 +43,7 @@ const renderTweets = function (array) {
 
     // calls createTweetElement for each tweet
     // takes return value and appends it to the tweets container
-    $('.tweets-container').prepend(createTweetElement(item));
+    $('.tweets-container').append(createTweetElement(item));
   }
 };
 
@@ -117,12 +117,13 @@ $(document).ready(function () {
           loadTweets();
         })
       });
-      $('#submit-tweet').trigger("reset");
-      $('.counter').text("140");
-      $('textarea').focus();
-
     }
-    //clear text field
+    //clear text field and add focus
+    $('#submit-tweet').trigger("reset");
+    $('.counter').text("140");
+    $('textarea').focus();
+
+
 
   });
 }

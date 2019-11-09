@@ -1,18 +1,20 @@
 header{
   margin: 0px;
+  float: left;
 }
 .header {
-  height: 400px;
-  width: 100%;
-  position: relative;
-  margin-left: 0px;
-  margin-top: 120px;
+  height: 350px;
+  width: 30%;
+  margin-top: 180px;
+  margin-left: 50px;
+  margin-right: 0px;
   display: flex;
   flex-direction: column;
   background: #cc932f;
   background-image: url("../images/asfalt-dark.png");
 }
 .avatar {
+  margin-top: 20px;
   margin-left: auto;
   margin-right: auto;
 }
@@ -21,3 +23,25 @@ header{
   text-align: center;
   margin: 0;
 }
+@media only screen and (max-width: 1024px){ 
+  .header {
+      height: 350px;
+      width: 100%;
+      position: relative;
+      margin-left: 0px;
+      margin-top: 0px;
+      display: flex;
+      flex-direction: column;
+      background: #cc932f;
+      background-image: url("../images/asfalt-dark.png");
+  }
+  .avatar {
+      margin-left: auto;
+      margin-right: auto;
+  }
+  
+  #profile-name {
+      text-align: center;
+      margin: 0;
+  }
+} 

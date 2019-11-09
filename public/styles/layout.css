@@ -5,6 +5,7 @@
  */
 html {
   box-sizing: border-box;
+  height: 100%;
 }
 *, *:before, *:after {
   box-sizing: inherit;
@@ -18,6 +19,7 @@ body {
   color: #545149;
   background-color: #f4f1ec;
   font-size: 24px;
+  height: auto;
   font-family: 'Source Sans Pro', sans-serif;
 }
 
@@ -25,7 +27,18 @@ body {
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
  .container{
-  width: 90%;
-  margin: 0 auto;
+  width: 60%;
   height: auto;
+  float: right;
+  margin-top: 150px;
+  margin-right: 20px;
+ }
+ @media only screen and (max-width: 1024px){ 
+  .container{
+    width: 90%;
+    margin: 0 auto;
+    margin-top: 400px;
+    float: none;
+   }
+
  }
