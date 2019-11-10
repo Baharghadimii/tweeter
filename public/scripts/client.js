@@ -21,7 +21,7 @@ const createTweetElement = function (object) {
   </header>
   ${safeHTML}
   <footer class='tweet-footer'>
-      <p>${object.created_at}</p>
+      <p>${moment(object.created_at).fromNow()}</p>
       <i class="fas fa-heart icon"></i>
       <i class="fas fa-retweet icon"></i>
       <i class="fas fa-flag icon"></i>
