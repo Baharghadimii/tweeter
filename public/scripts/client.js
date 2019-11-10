@@ -1,14 +1,13 @@
-/* eslint-disable indent */
 /* eslint-disable no-undef */
 //escape from XSS(Cross-Site Scripting)
-const escape = function (str) {
+const escape = function(str) {
   let div = document.createElement('div');
   div.appendChild(document.createTextNode(str));
   return div.innerHTML;
 };
 
 //create tweet using user object
-const createTweetElement = function (object) {
+const createTweetElement = function(object) {
   //safe text to use for content
   const safeHTML = `<p class="tweet-content">${escape(object.content.text)}</p>`;
   //substitute markup content with data in given object
@@ -32,7 +31,7 @@ const createTweetElement = function (object) {
 };
 
 //render tweets using array of objects
-const renderTweets = function (array) {
+const renderTweets = function(array) {
   // loops through tweets
   for (const item of array) {
     // calls createTweetElement for each tweet
@@ -42,7 +41,7 @@ const renderTweets = function (array) {
 };
 
 //load tweets using ajax
-const loadTweets = function () {
+const loadTweets = function() {
   //get method using ajax
   $.ajax('/tweets', { method: 'GET' })
     .then((response) => {
@@ -56,11 +55,11 @@ const loadTweets = function () {
     });
 };
 
-$(document).ready(function () {
+$(document).ready(function() {
   //render tweets before submission
   loadTweets();
   //add onclick event handler
-  $('#submit-tweet').submit(function (event) {
+  $('#submit-tweet').submit(function(event) {
     //prevent page from refreshing for fetching data
     event.preventDefault();
     //text in input filed
@@ -87,7 +86,7 @@ $(document).ready(function () {
         datatype: 'JSON',
         method: 'POST',
         data: $(this).serialize(),
-        success: (function (data) {
+        success: (function() {
           //render tweets after adding data to database
           loadTweets();
         })
