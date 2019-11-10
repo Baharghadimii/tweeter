@@ -1,82 +1,95 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <!-- Meta Information -->
+    <title>Tweeter - Home Page</title>
 
-<head>
-  <!-- Meta Information -->
-  <title>Tweeter - Home Page</title>
+    <!--External Fonts-->
+    <link
+      href="https://fonts.googleapis.com/css?family=Bungee|Source+Sans+Pro:300,300i,400,700i&display=swap"
+      rel="stylesheet"
+    />
 
-  <!--External Fonts-->
-  <link href="https://fonts.googleapis.com/css?family=Bungee|Source+Sans+Pro:300,300i,400,700i&display=swap"
-    rel="stylesheet">
+    <!-- External CSS -->
+    <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
 
-  <!-- External CSS -->
-  <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
+    <!-- App CSS -->
+    <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/header.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/tweets.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/error.css" type="text/css" />
 
-  <!-- App CSS -->
-  <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
-  <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
-  <link rel="stylesheet" href="/styles/header.css" type="text/css" />
-  <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
-  <link rel="stylesheet" href="/styles/tweets.css" type="text/css" />
-  <link rel="stylesheet" href="/styles/error.css" type="text/css" />
+    <!-- External JS -->
+    <script type="text/javascript" src="/vendor/jquery-2.2.3.min.js"></script>
+    <script
+      src="https://kit.fontawesome.com/3310f83d3a.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.js"></script>
+  </head>
 
-  <!-- External JS -->
-  <script type="text/javascript" src="/vendor/jquery-2.2.3.min.js"></script>
-  <script src="https://kit.fontawesome.com/3310f83d3a.js" crossorigin="anonymous"></script>
-</head>
+  <body>
+    <!-- Top nav bar (fixed) -->
+    <nav class="nav">
+      <div id="logo">
+        <span>tweeter</span>
+      </div>
+      <div id="nav-div-button">
+        <h4 id="nav-header"><span id="nav-bold">Write</span> a new tweet</h4>
+        <button class="button">
+          <i class="fas fa-angle-double-down vert-move"></i>
+        </button>
+      </div>
+    </nav>
 
-<body>
-  <!-- Top nav bar (fixed) -->
-  <nav class='nav'>
-    <div id='logo'>
-      <span>tweeter</span>
-    </div>
-    <div id='nav-div-button'>
-      <h4 id='nav-header'><span id='nav-bold'>Write</span> a new tweet
-      </h4>
-      <button class='button'>
-        <i class="fas fa-angle-double-down vert-move"></i>
-      </button>
-    </div>
-  </nav>
-
-  <!--Header with profile picture and name-->
-  <header class='header'>
-    <div class='avatar'>
-      <img src="/images/profile-hex.png">
-    </div>
-    <div>
-      <h2 id='profile-name'><strong>Bahar</strong> Ghadimi</h2>
-    </div>
-  </header>
-  <!-- Page-specific (main) content here -->
-  <main class="container">
-    <!--Compose tweet section-->
-    <!--Error Section-->
-    <section class='error'>
-      <i class="fas fa-exclamation-triangle"></i>
-      <span id='error-content'></span>
-      <i class="fas fa-exclamation-triangle"></i>
-    </section>
-    <!--New Tweet-->
-    <section class="new-tweet">
-      <h2>Compose Tweet</h2>
-      <form id='submit-tweet' method="GET" action="/">
-        <div>
-          <textarea id="input-field" name="text" placeholder="What are you humming about?" autofocus></textarea>
-        </div>
-        <input class='textarea-button' type="submit" value="Tweet">
-        <span class="counter">140</span>
-      </form>
-    </section>
-    <!--Tweets section-->
-    <article class='tweets-container'>
-    </article>
-  </main>
-</body>
-<!-- App JS -->
-<script src="/scripts/client.js"></script>
-<script src='/scripts/form-toggle.js'></script>
-<script type="text/javascript" src="/scripts/compose-char-counter.js"></script>
-
+    <!--Header with profile picture and name-->
+    <header class="header">
+      <div class="avatar">
+        <img src="/images/profile-hex.png" />
+      </div>
+      <div>
+        <h2 id="profile-name"><strong>Bahar</strong> Ghadimi</h2>
+      </div>
+    </header>
+    <!-- Page-specific (main) content here -->
+    <main class="container">
+      <!--Compose tweet section-->
+      <!--Error Section-->
+      <section class="error">
+        <i class="fas fa-exclamation-triangle"></i>
+        <span id="error-content"></span>
+        <i class="fas fa-exclamation-triangle"></i>
+      </section>
+      <!--New Tweet-->
+      <section class="new-tweet">
+        <h2>Compose Tweet</h2>
+        <form id="submit-tweet" method="GET" action="/">
+          <div>
+            <textarea
+              id="input-field"
+              name="text"
+              placeholder="What are you humming about?"
+              autofocus
+            ></textarea>
+          </div>
+          <input class="textarea-button" type="submit" value="Tweet" />
+          <span class="counter">140</span>
+        </form>
+      </section>
+      <!--Tweets section-->
+      <article class="tweets-container"></article>
+      <!--Floating Button for navigation-->
+      <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+    </main>
+  </body>
+  <!-- App JS -->
+  <script src="/scripts/client.js"></script>
+  <script src="/scripts/form-toggle.js"></script>
+  <script src="/scripts/floating-button.js"></script>
+  <script
+    type="text/javascript"
+    src="/scripts/compose-char-counter.js"
+  ></script>
 </html>
