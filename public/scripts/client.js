@@ -92,7 +92,7 @@ $(document).ready(function () {
           loadTweets();
         })
       });
-      //clear text field and add focus
+      //clear text field andtime add focus
       $('#submit-tweet').trigger("reset");
       $('.counter').text("140");
       $('textarea').focus();
