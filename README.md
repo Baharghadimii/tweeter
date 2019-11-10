@@ -4,6 +4,9 @@ A simple single-page AJAX based Tweeter clone that uses JQuery, HTML and plain o
 
 ## Final Product
 
+!["screenshot of the page in desktop view"](https://github.com/Baharghadimii/tweeter/blob/master/doc/toggled-page.png?raw=true)
+!["screenshot of the page in tablet view"](https://github.com/Baharghadimii/tweeter/blob/master/doc/toggled-page.png?raw=true)
+
 ## Dependencies
 
 - Express
