@@ -1,4 +1,4 @@
-header{
+header {
   margin: 0px;
   float: left;
 }
@@ -21,27 +21,32 @@ header{
 
 #profile-name {
   text-align: center;
+  color: white;
   margin: 0;
+  font-weight: 200;
 }
-@media only screen and (max-width: 1024px){ 
+#first_name {
+  font-weight: 700;
+}
+@media only screen and (max-width: 1024px) {
   .header {
-      height: 350px;
-      width: 100%;
-      position: relative;
-      margin-left: 0px;
-      margin-top: 0px;
-      display: flex;
-      flex-direction: column;
-      background: #cc932f;
-      background-image: url("../images/asfalt-dark.png");
+    height: 350px;
+    width: 100%;
+    position: relative;
+    margin-left: 0px;
+    margin-top: 0px;
+    display: flex;
+    flex-direction: column;
+    background: #cc932f;
+    background-image: url("../images/asfalt-dark.png");
   }
   .avatar {
-      margin-left: auto;
-      margin-right: auto;
+    margin-left: auto;
+    margin-right: auto;
   }
-  
+
   #profile-name {
-      text-align: center;
-      margin: 0;
+    text-align: center;
+    margin: 0;
   }
-} 
+}
