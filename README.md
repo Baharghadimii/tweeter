@@ -1,6 +1,6 @@
 # Tweeter Project
 
-A simple single-page AJAX based Tweeter clone that uses JQuery, HTML and plain ol' CSS3.
+A simple single-page AJAX based Twitter clone that uses jQuery, HTML and plain ol' CSS3.
 
 ## Final Product
 
